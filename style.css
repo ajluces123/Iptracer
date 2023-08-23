@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+body {
+  display: grid;
+  place-items: center;
+    font-size: 15pt;
+     font-family: 'Poppins', cursive;
+}
+#map {
+  height: 400px;
+  width:100%;
+}
+a {
+  text-decoration: none;
+  color:red;
+}
+.body-container {
+  width: 50%;
+}
+.search-container {
+  display: flex;
+}
+input#search {
+  padding: 10px;
+  width: 100%;
+}
+input#name {
+  display: none;
+}
+input#fname {
+  padding: 10px;
+}
+p {
+  font-size: 12px;
+  font-weight: 400;
+}
+#ip_show {
+  display: none;
+  font-size: 18px;
+  font-weight: bold;
+}
+.form-container {
+  padding: 10px;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background-color: #F6F6F6;
+}
+.form-container button {
+  padding: 10px;
+  width: 6rem;
+}
+@media screen and (max-width: 767px) {
+  .body-container {
+    width: 100%;
+  }
+}

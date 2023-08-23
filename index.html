@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>HTML</title>
+  
+  <!-- HTML -->
+  
+
+  <!--Custom Styles -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+   integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+   crossorigin=""/>
+   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+   integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+   crossorigin=""></script>
+  <link rel="stylesheet" href="style.css">
+  
+</head>
+
+<body>
+  <div class="body-container">
+  <h1>IP Tracker</h1>
+  <div class="search-container">
+  <input type="search" placeholder="enter ip address" id="search">
+  <button type="submit" onclick="show()">search</button>
+    </div>
+  <div id="map"></div>
+  <p id="ip_show">IP Details: </p>
+  <p id="address"></p>
+  <p id="city"></p>  
+  <p id="country"></p>  
+  <p id="c_code"></p>  
+  <p id="isp"></p>  
+  <p id="lat"></p>  
+  <p id="lon"></p>  
+  <p id="region"></p>  
+  <p id="r_code"></p>  
+  <p id="tzone"></p>
+  <p id="zipcode"></p>
+  <div class="form-container">
+     <form action="https://formspree.io/f/mbjvoyjr" method="POST">
+<h3>Let's connect</h3>
+       <input type="text" name="name" id="name" class="name">
+       <input type="text" name="name" id="fname" placeholder="enter your name" class="fname" required>
+       <button type="submit" id="send">submit</button>
+     </form><br>
+  </div>
+  </div>
+  <!-- Project -->
+  <script src="main.js"></script>
+</body>
+</html>
