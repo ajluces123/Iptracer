@@ -1,8 +1,10 @@
 // html to js selector 
 let btn = document.querySelector('button')
 let con = document.querySelector('.form-container')
+let form = document.querySelector('form')
 let name  = document.getElementById('name')
 let search = document.getElementById('search')
+let send = document.getElementById('send')
 const add = document.getElementById('address'),
 country = document.getElementById('country');
 city = document.getElementById('city'),
@@ -15,6 +17,12 @@ r_code = document.getElementById('r_code'),
 tzone = document.getElementById('tzone'),
 zipcode = document.getElementById('zipcode')
 ip_show = document.getElementById('ip_show')
+
+send.addEventListener('click', () => {
+  alert('form submitted!, you can now trace an ip address')
+  form.style.display = 'none'
+  con.style.display = 'none'
+})
 function show() {
  const successCallback = (position) => {
   let lat = position.coords.latitude;

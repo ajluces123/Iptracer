@@ -8,12 +8,14 @@ body {
 #map {
   height: 400px;
   width:100%;
+  z-index: 1;
 }
 a {
   text-decoration: none;
   color:red;
 }
 .body-container {
+  position: relative;
   width: 50%;
 }
 .search-container {
@@ -38,12 +40,21 @@ p {
   font-size: 18px;
   font-weight: bold;
 }
-.form-container {
+.form-container { 
+display: none;
+}
+form {
+  text-align: center;
   padding: 10px;
-  display: none;
-  justify-content: center;
-  align-items: center;
-  background-color: #F6F6F6;
+  position: absolute;
+  z-index: 1;
+  top: 2rem;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 300px;
+  box-shadow: 0 0 10px 1px rgba(124, 124, 124, 0.274);
+  background-color: #ffffff;
 }
 .form-container button {
   padding: 10px;
