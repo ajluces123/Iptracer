@@ -3,6 +3,7 @@ let btn = document.querySelector('button')
 let con = document.querySelector('.form-container')
 let form = document.querySelector('form')
 let name  = document.getElementById('name')
+let maps  = document.getElementById('map')
 let search = document.getElementById('search')
 let send = document.getElementById('send')
 const add = document.getElementById('address'),
@@ -20,6 +21,7 @@ ip_show = document.getElementById('ip_show')
 
 send.addEventListener('click', () => {
   alert('form submitted!, you can now trace an ip address')
+  maps.style.filter = 'blur(0)'
   form.style.display = 'none'
   con.style.display = 'none'
 })
@@ -46,6 +48,8 @@ async function getMethod() {
   const response = await fetch(request)
   const data = await response.json()
   console.log(data)
+  maps.style.filter = 'blur(10px)'
+  
   con.style.display = 'block'
 //popup info to view latitude and longitude when clicked 
 var popup = L.popup();
@@ -68,7 +72,7 @@ map.on('click', onMapClick);
     fillOpacity: 0.6,
     radius: 100
   }).addTo(map);
-  map.setView([lat, lon],9);
+  map.setView([lat, lon],15);
   //display data into html body
   ip_show.style.display = 'block'
   add.innerHTML = 'IP address: ' + data.address
@@ -95,14 +99,15 @@ navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
 
 
 //leaflet map viewpoint
-var map = L.map('map').setView([14.586242, 121.007538],5);
+var map = L.map('map').setView([14.586242, 121.007538],10);
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  maxZoom: 15,
+  maxZoom: 19,
 }).addTo(map);
 //create element for link to open with google map
 var a = document.createElement('a'); 
 var link = document.createTextNode("Open in google map");
 a.appendChild(link); 
-a.title = "google map"; 
+a.title = "google map";
+a.classList.add("gmap");
 a.style.textDecoration = "none"
 //search button eventlistener
