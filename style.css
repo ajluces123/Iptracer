@@ -219,6 +219,7 @@ section h2, .p_info h2 {
 }
 .contact {
     display: flex;
+    height: 100vh;
     flex-direction: row-reverse;
     align-items: center;
     justify-content: center;
@@ -229,7 +230,8 @@ section h2, .p_info h2 {
     text-align: center;
 }
 .form-img img {
-    max-width: 80%;
+    margin-top: 10rem;
+    max-width: 100%;
 }
 form {
     display: flex;
