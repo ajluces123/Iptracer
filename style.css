@@ -37,7 +37,7 @@ header, nav ul {
   width: 100%;
   justify-content: space-around;
   align-items: center;
-  padding: 10px;
+  padding: 12px;
   text-transform: capitalize;
   display: flex;
 }
@@ -50,7 +50,7 @@ color: white;
 font-size: 12pt;
 }
 li a:hover {
-    color: blueviolet;
+    color: orange;
     transition: .3s ease;
 }
 #ip_show {
@@ -79,9 +79,7 @@ aside {
     }
 }
 aside ul {
-position: absolute;
-left: 9rem;
-right: 0;
+text-align: center;
 margin: 10rem auto;
 }
 aside li a,span {
@@ -164,8 +162,7 @@ section {
   padding: 2rem;
 } 
 .p_info {
-    position: relative;
-    text-align: center;
+  text-align: center;
   width: 70%;
 }
 .p_info img {
@@ -181,7 +178,7 @@ section {
 #about {
     font-size: 12pt;
     line-height: 1.7rem;
-    width: 90%;
+    width: 100%;
 }
 #about h2 {
     font-size: 20pt;
