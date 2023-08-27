@@ -23,64 +23,46 @@
 </head>
 
 <body>
+    <aside>
+        <span id="close">x</span>
+            <ul>
+              <li><a href="index.html">ip lookup</a></li>
+              <li><a href="soon.html">dns lookup</a></li>
+              <li><a href="soon.html">whois lookup</a></li>
+              <li><a href="about.html">about</a></li>
+              <li><a href="contact.html">contact</a></li>
+            </ul>
+      </aside>
   <header>
     <h1>IP Tracker
-      <span class="material-symbols-rounded">
+      <span class="material-symbols-rounded" id="icon">
         search</span>
     </h1>
     <nav>
       <ul>
         <li><a href="index.html">ip lookup</a></li>
-        <li><a href="#">dns lookup</a></li>
-        <li><a href="#">whois lookup</a></li>
+        <li><a href="soon.html">dns lookup</a></li>
+        <li><a href="soon.html">whois lookup</a></li>
         <li><a href="about.html">about</a></li>
-        <li><a href="#">contact</a></li>
+        <li><a href="contact.html">contact</a></li>
       </ul>
     </nav>
     <span class="material-symbols-rounded" id="menu">menu</span>  
   </header>
-  <div class="body-container">
-  <div id="map"></div>
-  <div class="search-container">
-    <input type="search" placeholder="Enter ip address" id="search">
-    <button type="submit" onclick="show()" id="btn"><span class="material-symbols-rounded">
-      search</span></button>
-</div>
-<article>
-  <section class="p_info">
-  <h2 id="ip_show">IP Address Details: </h2>
-  <p id="address"></p>
-  <p id="city"></p>  
-  <p id="country"></p>  
-  <p id="c_code"></p>  
-  <p id="isp"></p>  
-  <p id="lat"></p>  
-  <p id="lon"></p>  
-  <p id="region"></p>  
-  <p id="r_code"></p>  
-  <p id="tzone"></p>
-  <p id="zipcode"></p>
-</section>
-  <section class="p_about">
-            <h2>About</h2>
-            <p>Hello, I'm Andrew Julao, the creator of this website. You might wonder what this IP tracker does. 
-                An IP tracker is a helpful tool that can be used to find and gather information about an IP address.
-                 IP stands for Internet Protocol, which is a unique numerical address 
-                 assigned to each device connected to a network. Using an IP tracker,
-                  you can discover details like the country, city, internet service provider,
-                 and even the approximate physical location of the device using that specific IP address.</p>
+  <article id="about">
+    <section class="p_info" id="a_info">
+      <img src="images/about.png" alt="about svg" id="a_img">
   </section>
-</article>
-  <div class="form-container">
-     <form action="https://formspree.io/f/mbjvoyjr" method="POST">
-<h3>Enter your name:</h3>
-       <input type="text" name="name" id="name" class="name">
-       <input type="text" name="name" id="fname" placeholder=" your name " class="fname" required>
-       <button type="submit" id="send" formtarget="blank">submit</button>
-     </form><br>
-  </div>
-  </div>
-
+    <section class="p_about">
+        <h2>about</h2>
+           <p>Hello, I'm Andrew Julao, the creator of this website. You might wonder what this IP tracker does.
+             An IP tracker is a helpful tool that can be used to find and gather information about an IP address.
+              IP stands for Internet Protocol, which is a unique numerical address assigned to each device 
+              connected to a network. Using an IP tracker, you can discover details like the country, city, 
+              internet service provider, and even the approximate physical location of the device using 
+              that specific IP address.</p>
+    </section>
+  </article>
   <script src="main.js"></script>
 </body>
 </html>

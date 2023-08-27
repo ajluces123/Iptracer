@@ -1,11 +1,10 @@
 // html to js selector 
-let btn = document.querySelector('button')
-let con = document.querySelector('.form-container')
-let form = document.querySelector('form')
-let name  = document.getElementById('name')
-let maps  = document.getElementById('map')
+let img  = document.getElementById('img')
+let aside = document.querySelector('aside')
+let pInfo  = document.querySelector('.p_info')
 let search = document.getElementById('search')
-let send = document.getElementById('send')
+let menu = document.getElementById('menu')
+let close = document.getElementById('close')
 const add = document.getElementById('address'),
 country = document.getElementById('country');
 city = document.getElementById('city'),
@@ -19,19 +18,18 @@ tzone = document.getElementById('tzone'),
 zipcode = document.getElementById('zipcode')
 ip_show = document.getElementById('ip_show')
 
-send.addEventListener('click', () => {
-  alert('form submitted!, you can now trace an ip address')
-  maps.style.filter = 'blur(0)'
-  form.style.display = 'none'
-  con.style.display = 'none'
+menu.addEventListener('click', () => {
+    aside.style.display = "block";
+    aside.style.width = '100%';
+})
+close.addEventListener('click', () => {
+    aside.style.display = "none";
+    aside.style.width = '0';
 })
 function show() {
- const successCallback = (position) => {
-  let lat = position.coords.latitude;
-  let lon = position.coords.longitude;
-  console.log("Your latitude and longitude is :" + lat + "," + lon)
-  name = (document.getElementById('name')).value = lat +","+lon; 
-  console.log(position);
+  img.style.display = 'none';
+  pInfo.style.textAlign = 'left';
+
   let empty = "";
   let string = /[a-zA-Z]/;
   if (search.value == empty || search.value.match(string)) {
@@ -48,9 +46,6 @@ async function getMethod() {
   const response = await fetch(request)
   const data = await response.json()
   console.log(data)
-  maps.style.filter = 'blur(10px)'
-  
-  con.style.display = 'block'
 //popup info to view latitude and longitude when clicked 
 var popup = L.popup();
 function onMapClick(e) {
@@ -60,7 +55,7 @@ function onMapClick(e) {
     .openOn(map);
 }
 map.on('click', onMapClick);
-//transform latitude and longitude into readable data from api
+//convert latitude and longitude objects from api into text element
   let lat = data.lat
   let lon = data.lon
   a.href = "https://maps.google.com/?q=" + lat +","+ lon;
@@ -89,15 +84,6 @@ map.on('click', onMapClick);
 }
 getMethod()
 }}
-const errorCallback = (error) => {
-  alert('Turn on your location first!')
-  console.log(error);
-};
-
-navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
-}
-
-
 //leaflet map viewpoint
 var map = L.map('map').setView([14.586242, 121.007538],10);
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -110,4 +96,3 @@ a.appendChild(link);
 a.title = "google map";
 a.classList.add("gmap");
 a.style.textDecoration = "none"
-//search button eventlistener
